@@ -1,7 +1,25 @@
-<nav class="">
+<div class="p-6 bg-orange-300 opacity-75 text-white md:flex md:justify-between md:items-center">
+    <div class="flex justify-between">
+        <h1 class="text-xl">JOHAN HELLGREN</h1>
+        <button @onclick="ToggleMenu" class="md:hidden">
+            <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+                <path fill-rule="evenodd"
+                      d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
+            </svg>
+        </button>
+    </div>
     
-</nav>
+    @{
+        var menuVisibleClass = menuVisible ? "" : "hidden";
+    }
+    <nav class="@($"flex flex-col {menuVisibleClass} md:flex md:flex-row")">
+        <NavLink class="text-2xl hover:bg-gray-700">PORTFOLIO</NavLink>
+        <NavLink class="text-2xl">BLOG</NavLink>
+        <NavLink class="text-2xl">ABOUT</NavLink>
+    </nav>
+</div>
 
 @code {
-    
+    bool menuVisible = false;
+    void ToggleMenu() => menuVisible = !menuVisible;
 }

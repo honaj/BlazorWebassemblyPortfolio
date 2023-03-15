@@ -1,15 +1,21 @@
 ﻿@inherits LayoutComponentBase
+<div class="flex flex-col min-h-screen">
+    <Navbar/>
 
-<div class="page">
+    <div class="p-4">
+        @Body
+    </div>
+</div>
+@*<div class="page">
     <Navbar/>
 
     <main>
-        @*<div class="top-row px-4">
+        $1$<div class="top-row px-4">
             <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
-        </div>*@
+        </div>#1#
 
         <article class="content px-4">
             @Body
         </article>
     </main>
-</div>
+</div>*@
